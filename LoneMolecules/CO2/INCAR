@@ -1,0 +1,36 @@
+SYSTEM = Beta12Borophene !The name of the system
+PREC = Normal   !Normal or Accurate
+ENCUT = 500   !kinetic energy cutoff >=max(ENMAX) in POTCAR
+LREAL = Auto   !values=.FALSE. or Auto  (def=.FALSE. -->for small systems)
+ISMEAR = 1   !bulk=-5. insulators=0/-5. relax in metal=1. def=1
+SIGMA = 0.1   !metals=0.2.  semicond,insulat=0.05. def=0.2
+ISPIN = 2   !1=nonspinpol, 2=spinpol
+GGA = PE   !GGA flavor: PE=PBE, RP=RPBE, RE=revPBE, PS=PBEsol
+IDIPOL = 3   !=1 to 3 for lattice directions, 4 for isolated molecule.  Delete this for bulk.
+LDIPOL = .TRUE.   !Delete this for bulk
+LREAL=AUTO !This is reccomended for small supercells - uses recipricol space
+
+#RWIGS = 2*0.370 0.820   !Wigner-Seitz radius for each atom
+#Turn on if metal atoms are present. Determine good initial spin state based on oxidation state. Add 20% to whatever spin state you want to initialse with. 1 unit for every unpaired electron. Just do positive.
+#MAGMOM = 40*0.0 1.2 2*0.0 !initial magnetic moment for each atom
+LCHARG = .FALSE.  !CHG,CHGCAR
+LWAVE = .FALSE.  !WAVECAR
+LVTOT = .FALSE.  !LOCPOT
+LELF = .FALSE.   !ELFCAR
+#LORBIT = 11   !11 = DOSCAR and lm decomposed PROCAR file for PAW-POTCAR
+
+ALGO = Normal   !def=Normal. Sets IALGO and LDIAG.
+NCORE = 1   !def=1. 0.5*(cores per node) seems best
+NPAR = 1
+EDIFF = 1E-6   !Def=1E-4
+NELM = 60   !Def=60
+#NELMIN = 5   !Def=2
+
+IBRION = 2   !0=AIMD, 1=QN, 2=CG
+POTIM = 0.5   !scaling constant, def=0.5
+ISIF = 2   !def=2=no cell changes
+NSW = 1000   !No. of ionic steps
+EDIFFG = -0.01   !>0: energy-based; <0:force-based break condition
+
+IVDW=12  ! 0=no correction, 11=D3zero, 12=D3BJ, 2=TS, 20=TS
+#VDW_RADIUS = 20.0  !D3 parameter
