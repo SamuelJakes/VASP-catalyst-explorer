@@ -1,3 +1,6 @@
+# Example output
+![Fe Example Graph](FeExample.PNG?raw=true "Fe Example Graph")
+
 # How to use this software
 This software is designed to be used with VASP. Given VASP files containing potential catalysts, the
 software uses a Bash script to create nineteen further VASP jobs per catalyst. Each job contains a
